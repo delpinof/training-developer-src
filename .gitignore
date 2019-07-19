@@ -8,3 +8,6 @@ experiment/
 .idea/
 *.iml
 .DS_Store
+*.class
+out/
+*.log
