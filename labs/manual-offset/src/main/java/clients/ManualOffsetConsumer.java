@@ -22,7 +22,7 @@ public class ManualOffsetConsumer {
     private static long lastOffset;
 
     public static void main(String[] args) {
-        System.out.println("*** Starting Basic Consumer ***");
+        System.out.println("*** Starting Manual offset Consumer ***");
 
         Properties settings = new Properties();
         settings.put(ConsumerConfig.GROUP_ID_CONFIG, "write-offset-consumer");
@@ -47,7 +47,7 @@ public class ManualOffsetConsumer {
             if (lines.size() == 1)
                 fileOffset = lines.get(0);
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.printf("File %s not found.%n", FILE_NAME);
         }
 
         boolean seekFromFile = fileOffset != null && !fileOffset.isEmpty();
